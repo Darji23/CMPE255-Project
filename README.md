@@ -1,7 +1,7 @@
 # CMPE255-Project : Automated Skin Lesion Segmentation for Melanoma Detection using CRISP-DM Methodology
 
 ## Authors
-Soham Raj Jain
+Soham Raj Jain, Prachi Gupta
 
 ## Project Resources
 
