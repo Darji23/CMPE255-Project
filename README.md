@@ -7,8 +7,8 @@ Soham Raj Jain, Prachi Gupta
 
 | Resource | Link |
 |----------|------|
-| **Google Drive** | [Access Dataset & Files](your-google-drive-link-here) |
-| **Presentation Deck** | [View Presentation](your-presentation-link-here) |
+| **Google Drive** | [Access Dataset & Files](https://drive.google.com/drive/folders/1cSEtOXLsFajT9ESzUVxmTvRjhv3d_cC3?usp=sharing) |
+| **Presentation Deck** | [View Presentation](https://docs.google.com/presentation/d/1Gl6ffEALti2DKhBPrcjzvEeO0u4lxAH7eM7mu0FeNpc/edit?usp=sharing) |
 | **Deployment** | [Live Demo](your-deployment-link-here) |
 | **Explanation Video** |[Video](https://drive.google.com/file/d/1farHllhVM55IG8M0zZXznEQNwHZWgGbV/view?usp=sharing)  |
 
