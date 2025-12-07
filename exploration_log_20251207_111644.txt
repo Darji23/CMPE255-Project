@@ -1,0 +1,66 @@
+📝 Logging output to: exploration_output/exploration_log_20251207_111644.txt
+🖼️  Saving images to: exploration_output/
+
+============================================================
+DATA EXPLORATION & VISUALIZATION
+============================================================
+📂 Image directory: /content/drive/MyDrive/CMPE255/Project/ISIC2018_Task1-2_Training_Input
+📂 Mask directory:  /content/drive/MyDrive/CMPE255/Project/ISIC2018_Task1_Training_GroundTruth
+
+📊 Total training images: 2594
+============================================================
+
+🖼️  VISUALIZING RANDOM SAMPLES FROM TRAINING SET:
+
+Sample 1: ISIC_0000555.jpg
+  ├─ Image size: (680, 833, 3)
+  ├─ Mask size:  (680, 833)
+  ├─ Lesion area: 19.46%
+  └─ Pixel range: [0, 233]
+
+Sample 2: ISIC_0000112.jpg
+  ├─ Image size: (1536, 2048, 3)
+  ├─ Mask size:  (1536, 2048)
+  ├─ Lesion area: 20.27%
+  └─ Pixel range: [0, 226]
+
+Sample 3: ISIC_0011333.jpg
+  ├─ Image size: (768, 1024, 3)
+  ├─ Mask size:  (768, 1024)
+  ├─ Lesion area: 34.59%
+  └─ Pixel range: [17, 255]
+
+Sample 4: ISIC_0010850.jpg
+  ├─ Image size: (768, 1024, 3)
+  ├─ Mask size:  (768, 1024)
+  ├─ Lesion area: 13.63%
+  └─ Pixel range: [0, 254]
+
+💾 Saved visualization: exploration_output/training_samples_20251207_111644.png
+
+============================================================
+📈 DATASET STATISTICS
+============================================================
+
+Calculating statistics...
+
+✅ Statistics from 2594 samples:
+   ├─ Mean lesion area: 21.40%
+   ├─ Std lesion area:  20.83%
+   ├─ Min lesion area:  0.30%
+   ├─ Max lesion area:  98.66%
+   └─ Median lesion area: 13.81%
+
+📐 Image dimensions found: 206 unique size(s)
+   └─ (566, 679): 1 images (0.0%)
+   └─ (4420, 6640): 3 images (0.1%)
+   └─ (4441, 6681): 3 images (0.1%)
+   └─ (4439, 6748): 1 images (0.0%)
+   └─ (4422, 6622): 1 images (0.0%)
+
+💾 Saved statistics plot: exploration_output/statistics_20251207_111644.png
+
+============================================================
+✅ Data exploration complete!
+📁 All outputs saved to: exploration_output/
+============================================================
