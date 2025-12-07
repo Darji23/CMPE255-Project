@@ -1,0 +1,30 @@
+{
+    "config": {
+        "image_dir": "/content/drive/MyDrive/CMPE255/Project/ISIC2018_Task1-2_Training_Input",
+        "mask_dir": "/content/drive/MyDrive/CMPE255/Project/ISIC2018_Task1_Training_GroundTruth",
+        "batch_size": 12,
+        "num_epochs": 30,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "patience": 10,
+        "train_split": 0.8,
+        "val_split": 0.1,
+        "num_workers": 4,
+        "backbone": "resnet50",
+        "output_stride": 16,
+        "save_dir": "checkpoints_deeplabv3plus",
+        "seed": 42
+    },
+    "training": {
+        "best_val_dice": 0.9213994199579413,
+        "best_val_iou": 0.8550787595185366,
+        "total_epochs": 23
+    },
+    "test_metrics": {
+        "iou": 0.8205524631417714,
+        "dice": 0.8906684885374628,
+        "sensitivity": 0.8883644228442931,
+        "specificity": 0.9735806703567504,
+        "precision": 0.9221794035858832
+    }
+}
