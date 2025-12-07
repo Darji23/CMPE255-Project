@@ -10,7 +10,7 @@ Soham Raj Jain
 | **Google Drive** | [Access Dataset & Files](your-google-drive-link-here) |
 | **Presentation Deck** | [View Presentation](your-presentation-link-here) |
 | **Deployment** | [Live Demo](your-deployment-link-here) |
-| **Explanation Video** |([Video]([url](https://drive.google.com/file/d/1farHllhVM55IG8M0zZXznEQNwHZWgGbV/view?usp=sharing)))  |
+| **Explanation Video** |([url](https://drive.google.com/file/d/1farHllhVM55IG8M0zZXznEQNwHZWgGbV/view?usp=sharing)))  |
 
 ---
 ## CRISP-DM Methodology
