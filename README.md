@@ -77,7 +77,7 @@ Analysis of the lesion coverage within images reveals:
 | **Minimum Lesion Area** | 0.30% |
 | **Maximum Lesion Area** | 98.66% |
 
-![Lesion Area Distribution](exploration_output/statistics_20251207_111644.png)
+![Lesion Area Distribution](Data-Understanding-Artifacts/statistics_20251207_111644.png)
 
 **Key Observations:**
 - The lesion area distribution is **right-skewed**, with most lesions occupying between 5% and 35% of the image
