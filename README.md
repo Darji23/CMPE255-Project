@@ -17,7 +17,8 @@ Shilpa YR(019151782)
 | **Presentation Deck** | [View Presentation](https://docs.google.com/presentation/d/1Gl6ffEALti2DKhBPrcjzvEeO0u4lxAH7eM7mu0FeNpc/edit?usp=sharing) |
 | **Deployment** | [Live Demo](https://drive.google.com/file/d/1L4S2pmBRX8YNtA5CqXY11RvP6bvYhlNW/view?usp=sharing) |
 | **Explanation Video** |[Video](https://drive.google.com/file/d/1farHllhVM55IG8M0zZXznEQNwHZWgGbV/view?usp=sharing)  |
-| **Report** |[Report]([https://drive.google.com/file/d/1farHllhVM55IG8M0zZXznEQNwHZWgGbV/view?usp=sharing](https://drive.google.com/file/d/1aO4SaEycUT7dqK4DOajdLdbHNQU802kE/view?usp=sharing))  |
+| **Report** |[Report](https://drive.google.com/file/d/1aO4SaEycUT7dqK4DOajdLdbHNQU802kE/view?usp=drive_link)  |
+
 
 ---
 ## CRISP-DM Methodology
