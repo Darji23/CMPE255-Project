@@ -391,7 +391,7 @@ The visualization shows representative predictions across various lesion types:
 
 # Deployment 
 
-## 1. Overview
+## Overview
 
 This deployment notebook exposes our trained **DeepLabV3+** model for the **ISIC 2018 Skin Lesion Segmentation** task through a simple **Gradio web UI** in Google Colab.
 
@@ -406,7 +406,7 @@ This deployment notebook exposes our trained **DeepLabV3+** model for the **ISIC
 
 ---
 
-## 2. Files Used for Deployment
+## Files Used for Deployment
 
 Inside the shared `Project` folder:
 
@@ -432,7 +432,7 @@ Inside the shared `Project` folder:
 
 ---
 
-## 4. Running the Deployment Notebook in Colab
+## Running the Deployment Notebook in Colab
 
 1. **Open the notebook**
    - In Google Drive: go to **Shared with me → Project**.  
@@ -473,7 +473,7 @@ Inside the shared `Project` folder:
 
    ```python
    demo.launch(share=False)
-## 5. Using the Gradio UI
+## Using the Gradio UI
 
 The UI has three main parts:
 
@@ -502,7 +502,7 @@ You can repeat this for different images by selecting another filename and click
 
 ---
 
-## 6. What Happens Internally
+## What Happens Internally
 
 When you click **Submit**:
 
