@@ -77,7 +77,6 @@ Analysis of the lesion coverage within images reveals:
 | **Minimum Lesion Area** | 0.30% |
 | **Maximum Lesion Area** | 98.66% |
 
-![Lesion Area Distribution](Data-Understanding-Artifacts/statistics_20251207_111644.png)
 
 **Key Observations:**
 - The lesion area distribution is **right-skewed**, with most lesions occupying between 5% and 35% of the image
@@ -89,7 +88,6 @@ Analysis of the lesion coverage within images reveals:
 
 Below are representative samples from the training dataset, showing the original dermoscopic images, their ground truth segmentation masks, and overlay visualizations:
 
-![Training Samples](exploration_output/training_samples_20251207_111644.png)
 
 **Sample Analysis:**
 
@@ -279,7 +277,6 @@ The model was trained using the following strategy:
 
 ## Training Results
 
-![Training History](checkpoints_deeplabv3plus/training_history.png)
 
 ### Key Observations
 
@@ -346,7 +343,6 @@ The final model was evaluated on the held-out test set (259 images) using compre
 
 ## Qualitative Results
 
-![Prediction Samples](checkpoints_deeplabv3plus/predictions_visualization.png)
 
 ### Sample-by-Sample Analysis
 
@@ -393,7 +389,7 @@ The visualization shows representative predictions across various lesion types:
 
 **Overall Assessment**: The model successfully meets the primary project objective (Dice > 0.89) and comes very close to the IoU target, demonstrating strong clinical potential for automated melanoma detection support.
 
-# Deployment – ISIC 2018 Skin Lesion Segmentation (DeepLabV3+)
+# Deployment 
 
 ## 1. Overview
 
@@ -526,14 +522,3 @@ When you click **Submit**:
    - 3-channel mask image for display  
    - Overlay RGB image with the lesion highlighted  
 
----
-
-## 7. Notes / Common Issues
-
-- If the Gradio app logs internal ASGI or event-loop warnings but the outputs still appear, these can be ignored for demo purposes.  
-- If you move `best_model.pth` or the ISIC input folder, update `ckpt_path` and `image_dir` accordingly.  
-- To stop the app, interrupt the Colab cell that is running `demo.launch()`.  
-
----
-
-This deployment notebook and UI complete the **Deployment** phase of the CRISP-DM cycle for our project: the trained DeepLabV3+ model is now accessible through a simple, interactive web interface that allows users to visualize lesion segmentations without touching any code.
