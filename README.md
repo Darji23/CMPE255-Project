@@ -424,7 +424,7 @@ Inside the shared `Project` folder:
 
 ---
 
-## 3. Prerequisites
+## Prerequisites
 
 - Google account with access to the shared `Project` folder in Google Drive  
 - Google Colab (GPU runtime recommended, CPU is fine for demo)  
