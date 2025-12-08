@@ -386,3 +386,148 @@ The visualization shows representative predictions across various lesion types:
 | Clinical Utility | High precision/sensitivity | 92%/89% | ✅ **EXCELLENT** |
 
 **Overall Assessment**: The model successfully meets the primary project objective (Dice > 0.89) and comes very close to the IoU target, demonstrating strong clinical potential for automated melanoma detection support.
+
+# Deployment – ISIC 2018 Skin Lesion Segmentation (DeepLabV3+)
+
+## 1. Overview
+
+This deployment notebook exposes our trained **DeepLabV3+** model for the **ISIC 2018 Skin Lesion Segmentation** task through a simple **Gradio web UI** in Google Colab.
+
+- **Input:** Dermoscopic skin image from the ISIC 2018 dataset  
+- **Output:**
+  1. Original image  
+  2. Predicted **segmentation mask** (binary lesion mask)  
+  3. **Overlay image** (original image with lesion region highlighted in red)
+
+> ⚠️ This is a *segmentation* model, not a disease classifier.  
+> It highlights the lesion area; it does **not** predict melanoma / benign labels.
+
+---
+
+## 2. Files Used for Deployment
+
+Inside the shared `Project` folder:
+
+- `best_model.pth`  
+  - Trained DeepLabV3+ checkpoint saved after training on ISIC 2018.
+- `DeepLabV3_Deployment_UI.ipynb`  
+  - Colab notebook containing the **Gradio UI** section.
+  - Includes:
+    - Model architecture definition (ASPP, Decoder, `DeepLabV3Plus`)
+    - Inference transforms
+    - Code to load `best_model.pth`
+    - Gradio app definition and launch code
+- `ISIC2018_Task1-2_Training_Input/`  
+  - Folder with dermoscopic images used as test inputs in the UI.
+
+---
+
+## 3. Prerequisites
+
+- Google account with access to the shared `Project` folder in Google Drive  
+- Google Colab (GPU runtime recommended, CPU is fine for demo)  
+- Internet connection (for Colab + Drive)
+
+---
+
+## 4. Running the Deployment Notebook in Colab
+
+1. **Open the notebook**
+   - In Google Drive: go to **Shared with me → Project**.  
+   - Open `DeepLabV3_Deployment_UI.ipynb` with **Google Colab**.
+
+2. **Select runtime**
+   - In Colab: `Runtime → Change runtime type`  
+     - Hardware accelerator: **GPU** (if available)  
+     - Click **Save**.
+
+3. **Run setup cells**
+   - Run the first cell to:
+     - Install required packages (`torch`, `albumentations`, `gradio`, etc.)  
+     - **Mount Google Drive** at `/content/drive`.  
+   - When prompted, authorize access to Drive.
+
+4. **Verify paths**
+   - In the configuration cell, check:
+
+     ```python
+     ckpt_path = "/content/drive/MyDrive/CMPE255/Project/best_model.pth"
+     image_dir = "/content/drive/MyDrive/CMPE255/Project/ISIC2018_Task1-2_Training_Input"
+     ```
+
+   - Adjust these paths if your Drive structure is different.
+
+5. **Run cells up to Gradio launch**
+   - Execute cells that:
+     - Define the model classes  
+     - Define the Albumentations transforms  
+     - Load the checkpoint (`best_model.pth`)  
+     - Define the inference helper (`segment_lesion_pils` / `segment_from_filename_numpy`)
+   - Confirm you see messages like:
+     - `✓ Loaded model from ...best_model.pth`  
+     - `Images found: N` (number of `.jpg` files in `image_dir`)
+
+6. **Launch the Gradio app**
+
+   ```python
+   demo.launch(share=False)
+## 5. Using the Gradio UI
+
+The UI has three main parts:
+
+1. **Input selector**
+   - Dropdown labeled **“Select test image”**.
+   - Populated with filenames from `ISIC2018_Task1-2_Training_Input`.
+
+2. **Submit button**
+   - Button labeled **“Submit”**.
+
+3. **Outputs**
+   - **Original** – the input dermoscopic image.  
+   - **Segmentation Mask** – binary mask where white pixels correspond to the predicted lesion.  
+   - **Overlay (Lesion Highlighted)** – original image with a red overlay on the lesion region.
+
+### Steps
+
+1. Choose a filename from the **dropdown**.  
+2. Click **Submit**.  
+3. Wait a few seconds while the model runs inference.  
+4. Inspect the three outputs:
+   - Check that the **mask** roughly matches the lesion.  
+   - Use the **overlay** to visually confirm where the model is focusing.  
+
+You can repeat this for different images by selecting another filename and clicking **Submit** again.
+
+---
+
+## 6. What Happens Internally
+
+When you click **Submit**:
+
+1. The app takes the selected filename and constructs its full path in `image_dir`.  
+2. It loads the image with **PIL** and converts it to RGB.  
+3. The image is preprocessed using the same Albumentations pipeline used during validation:
+   - Resize to 512×512  
+   - Normalize with ImageNet mean and std  
+   - Convert to tensor  
+4. The preprocessed image is passed through the **DeepLabV3+** model loaded from `best_model.pth`.  
+5. The model outputs a logit mask, which is converted to probabilities using `sigmoid`.  
+6. A threshold (e.g., 0.5) is applied to produce a **binary mask**.  
+7. The mask is resized back to the original image size.  
+8. An **overlay** is created by coloring pixels inside the mask red.  
+9. Gradio returns three images:
+   - Original RGB image  
+   - 3-channel mask image for display  
+   - Overlay RGB image with the lesion highlighted  
+
+---
+
+## 7. Notes / Common Issues
+
+- If the Gradio app logs internal ASGI or event-loop warnings but the outputs still appear, these can be ignored for demo purposes.  
+- If you move `best_model.pth` or the ISIC input folder, update `ckpt_path` and `image_dir` accordingly.  
+- To stop the app, interrupt the Colab cell that is running `demo.launch()`.  
+
+---
+
+This deployment notebook and UI complete the **Deployment** phase of the CRISP-DM cycle for our project: the trained DeepLabV3+ model is now accessible through a simple, interactive web interface that allows users to visualize lesion segmentations without touching any code.
